@@ -20,3 +20,26 @@ export function formatTime(date) {
     second: '2-digit',
   })
 }
+
+export function formatDate(seconds) {
+  if (!seconds) return '--'
+  return new Date(Number(seconds) * 1000).toLocaleDateString([], {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
+export function toPercent(raised, target) {
+  const raisedValue = Number(raised)
+  const targetValue = Number(target)
+  if (!Number.isFinite(raisedValue) || !Number.isFinite(targetValue) || targetValue === 0) {
+    return 0
+  }
+  return Math.min(100, (raisedValue / targetValue) * 100)
+}
+
+export function isSameAddress(a, b) {
+  if (!a || !b) return false
+  return a.toLowerCase() === b.toLowerCase()
+}

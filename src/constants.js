@@ -23,10 +23,14 @@ export const SUPPORTED_CHAINS = [
 
 export const DEFAULT_CHAIN_ID = SUPPORTED_CHAINS[0].chainId
 
-export const STUDENT_REGISTRY_ABI = [
-  'function getStudent(address _student) view returns (string name, uint256 age, string course)',
-  'function register(string _name, uint256 _age, string _course)',
-  'function registered(address) view returns (bool)',
+export const CROWDFUNDING_ABI = [
+  'function campaignCount() view returns (uint256)',
+  'function getCampaign(uint256 _id) view returns (tuple(address creator, string title, string description, uint256 target, uint256 raised, uint256 deadline, bool withdrawn, address[] contributors))',
+  'function createCampaign(string _title, string _description, uint256 _target, uint256 _durationDays) returns (uint256)',
+  'function contribute(uint256 _id) payable',
+  'function withdraw(uint256 _id)',
+  'event CampaignCreated(uint256 indexed id, address indexed creator, uint256 target, uint256 deadline)',
+  'event ContributionReceived(uint256 indexed id, address indexed contributor, uint256 amount)',
 ]
 
 export function toChainHex(chainId) {

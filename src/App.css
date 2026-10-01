@@ -466,3 +466,141 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.brand__mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+.campaigns {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.campaigns__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.campaign {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.campaign__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.campaign__title {
+  font-size: 17px;
+  margin: 0;
+}
+
+.campaign__creator {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.campaign__description {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.campaign__progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.campaign__figures {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.campaign__figures strong {
+  color: var(--text-h);
+}
+
+.campaign__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.campaign__contribute {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.campaign__contribute .field__input {
+  flex: 1 1 140px;
+  width: auto;
+}
+
+.field__input--area {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.field__hint--error {
+  color: var(--danger-text);
+}

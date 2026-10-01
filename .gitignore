@@ -11,6 +11,5 @@ pnpm-debug.log*
 .vscode/*
 .idea
 
-# stray install in this folder, not used by either app
-/package.json
-/package-lock.json
+# local clone of the sibling Student-Registry repo
+/Student-Registry/

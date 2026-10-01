@@ -24,32 +24,15 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: |
-            assignment-1/package-lock.json
-            my-react-app/package-lock.json
 
-      - name: Build assignment-1
-        working-directory: assignment-1
+      - name: Build
         run: |
           npm ci
           npm run build
-
-      - name: Build my-react-app
-        working-directory: my-react-app
-        run: |
-          npm ci
-          npm run build
-
-      - name: Assemble site
-        run: |
-          mkdir -p _site/assignment-1 _site/my-react-app
-          cp -R assignment-1/dist/. _site/assignment-1/
-          cp -R my-react-app/dist/. _site/my-react-app/
-          cp -R site/. _site/
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
 
   deploy:
     needs: build
